@@ -28,20 +28,15 @@
     <script>
         const urlParams = new URLSearchParams(window.location.search);
 
-        manley = parseFloat(urlParams.get("manley"))
-        cichon = parseFloat(urlParams.get("cichon"))
-        fisher = parseFloat(urlParams.get("fisher"))
-        christoff = parseFloat(urlParams.get("christoff"))
-
-        x_axis  = fisher - manley
-        y_axis = christoff - cichon
+        x_axis = parseFloat(urlParams.get("fisher"))
+        y_axis = parseFloat(urlParams.get("christoff"))
     
         window.onload = function() {
             var background = new Image();
             background.crossOrigin = '*'; 
             background.onload = function() {
                 var c = document.createElement("canvas");
-                c.width = 2500;
+                c.width = 1850;
                 c.height = 1600;
                 var ctx = c.getContext("2d");
                 ctx.fillStyle = "#EEEEEE"
@@ -55,26 +50,6 @@
                 dot.fill();
                 dot.stroke();
 
-                var manleyBar = c.getContext("2d");
-                manleyBar.fillRect(1536, 1304 + 100, 100, 100) // 1536,1304
-                manleyBar.fillStyle = "black"
-                manleyBar.fill()
-
-                var cichonBar = c.getContext("2d");
-                cichonBar.fillRect(2017, 1304 + 100, 100, 100) // 1696,1304
-                cichonBar.fillStyle = "black"
-                cichonBar.fill()
-
-                var fisherBar = c.getContext("2d");
-                fisherBar.fillRect(1776, 1303 + 100, 100, 100) // 1536,1524
-                fisherBar.fillStyle = "black"
-                fisherBar.fill()
-
-                var christoffBar = c.getContext("2d");
-                christoffBar.fillRect(2259, 1304 + 100, 100, 100) // 1696,1524
-                christoffBar.fillStyle = "black"
-                christoffBar.fill()
-
                 ctx.font="50px Montserrat"
                 ctx.textAlign="center"
                 ctx.fillStyle="#222222"
@@ -86,9 +61,8 @@
 
                 document.getElementById("banner").src = c.toDataURL();
             }
-            background.src = "./comp.png";
+            background.src = "./keeptsniche.png";
         }
         </script>
     </body>
     
-
