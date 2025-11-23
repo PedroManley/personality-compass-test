@@ -1,14 +1,4 @@
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-99715444-7"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-99715444-7');
-    </script>
-
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
     <link href='style.css' rel='stylesheet' type='text/css'>
     <title>SapplyValues Results</title>
@@ -43,6 +33,7 @@
     
         window.onload = function() {
             var background = new Image();
+            background.crossOrigin = '*'; 
             background.onload = function() {
                 var c = document.createElement("canvas");
                 c.width = 1850;
@@ -67,6 +58,8 @@
                 ctx.textAlign="right"
                 ctx.font="60px Montserrat"
                 ctx.fillText("SapplyValues.github.io", 1820, 1560)
+
+                document.getElementById("banner").src = c.toDataURL();
             }
             background.src = "./compass.png";
         }
