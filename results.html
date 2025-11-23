@@ -16,20 +16,25 @@
     <hr>
     
 	<h1 class="title">Results</h1></br>
-    <p style="text-align:center;margin:-2px auto">If you like this site, <a href="https://ko-fi.com/sunkdatadiver">consider chucking me a few bucks</a> :)))</p></br>
     <svg id="svgHeader" style="width: 100%;" viewBox="0 0 112 19">
 		<text x="50%" y="15" class="svgHeader">Results</text>
 	</svg>
     
     <img src="" id="banner"></canvas></br>
-    <p style="text-align:center;margin:-2px auto">Hint: you can download this image directly. No need to screenshot!</p></br>
+    <p style="text-align:center;margin:-2px auto">Nichest personality test?</p></br>
     <button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;">Back</button> <br>
 	
     
     <script>
         const urlParams = new URLSearchParams(window.location.search);
-        x_axis  = -parseFloat(urlParams.get("peter"))
-        y_axis  = -parseFloat(urlParams.get("max"))
+
+        manley = parseFloat(urlParams.get("manley"))
+        cichon = parseFloat(urlParams.get("cichon"))
+        fisher = parseFloat(urlParams.get("fisher"))
+        christoff = parseFloat(urlParams.get("christoff"))
+
+        x_axis  = fisher - manley
+        y_axis = christoff - cichon
     
         window.onload = function() {
             var background = new Image();
@@ -50,6 +55,26 @@
                 dot.fill();
                 dot.stroke();
 
+                var manleyBar = c.getContext("2d");
+                manleyBar.fillRect(1536, 1304 + 100, 100, 100) // 1536,1304
+                manleyBar.fillStyle = "black"
+                manleyBar.fill()
+
+                var cichonBar = c.getContext("2d");
+                cichonBar.fillRect(2017, 1304 + 100, 100, 100) // 1696,1304
+                cichonBar.fillStyle = "black"
+                cichonBar.fill()
+
+                var fisherBar = c.getContext("2d");
+                fisherBar.fillRect(1776, 1303 + 100, 100, 100) // 1536,1524
+                fisherBar.fillStyle = "black"
+                fisherBar.fill()
+
+                var christoffBar = c.getContext("2d");
+                christoffBar.fillRect(2259, 1304 + 100, 100, 100) // 1696,1524
+                christoffBar.fillStyle = "black"
+                christoffBar.fill()
+
                 ctx.font="50px Montserrat"
                 ctx.textAlign="center"
                 ctx.fillStyle="#222222"
@@ -61,7 +86,7 @@
 
                 document.getElementById("banner").src = c.toDataURL();
             }
-            background.src = "./compass.png";
+            background.src = "./comp.png";
         }
         </script>
     </body>
